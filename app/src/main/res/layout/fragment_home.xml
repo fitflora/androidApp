@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F7E8"
+
+    tools:context=".ui.home.HomeFragment"
+    >
+
+    <!-- Header with User Info -->
+    <LinearLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="#014429"
+        android:elevation="10dp"
+        android:padding="16dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="问候, Asyraf Omar"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一起种植，共同成长"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Profile Picture -->
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/profilepic"
+                android:layout_marginBottom="-5dp"/>
+
+
+            <!-- Points Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/profileImageView"
+                android:layout_alignEnd="@id/profileImageView"
+                android:background="@drawable/pointbadge"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:orientation="horizontal"
+                >
+
+                    <TextView
+                        android:id="@+id/points_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text="10"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/fireimage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:gravity="bottom"
+                        android:layout_alignEnd="@id/points_badge"
+                        android:layout_alignBottom="@id/points_badge"
+                        android:src="@drawable/baseline_local_fire_department_24" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+    <!-- Tabs for Points -->
+    <LinearLayout
+        android:id="@+id/circulartabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/headerView"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        >
+
+        <Button
+            android:id="@+id/total_points_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="Total Points"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/recent_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Recent"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <!-- Circular Progress Indicator -->
+    <RelativeLayout
+        android:id="@+id/circularlayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@id/circulartabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <!-- Circle -->
+        <ProgressBar
+            android:id="@+id/circular_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="75"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+
+    <!-- Points Text in Center -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/points_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="2459p"
+                android:textSize="36sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/points_subtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/points_text"
+                android:layout_centerHorizontal="true"
+                android:text="2 weeks till reset"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+    android:id="@+id/treeslistbuttons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/circularlayout"
+    android:layout_marginTop="16dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/trees_near_you_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Trees Near You"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/point_history_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Point History"
+        android:background="@drawable/rounded_button"
+        android:textColor="@android:color/black"/>
+</LinearLayout>
+
+    <EditText
+    android:id="@+id/search_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/treeslistbuttons"
+    android:layout_marginTop="16dp"
+    android:hint="Search"
+    android:background="@drawable/rounded_edittext"
+    android:padding="12dp"
+    android:inputType="text"/>
+
+    <!-- RecyclerView for Park List -->
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/recyclerView_parks"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/search_bar"
+android:layout_marginTop="16dp"/>
+    </RelativeLayout>

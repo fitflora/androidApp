@@ -19,6 +19,7 @@ import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ public class LoginFragment extends Fragment {
     private LoginViewModel mViewModel;
     private TextView SignUpText ;
 
+    private Button LoginButton;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -37,6 +40,7 @@ public class LoginFragment extends Fragment {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         SignUpText = root.findViewById(R.id.signup_text);
+        LoginButton = root.findViewById(R.id.login_button);
 
         String text = "Need an Account? Sign Up";
         int startIndex = text.indexOf("Sign Up");
@@ -65,6 +69,15 @@ public class LoginFragment extends Fragment {
         SignUpText.setText(spannableString);
         SignUpText.setMovementMethod(LinkMovementMethod.getInstance());
         SignUpText.setHighlightColor(Color.TRANSPARENT); // Optional: to remove the highlight color
+
+        LoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: logic for validation and verification
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_Login_to_Home);
+            }
+        });
 
         mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         // TODO: Use the ViewModel

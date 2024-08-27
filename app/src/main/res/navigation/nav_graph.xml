@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_Login_to_Signup"
             app:destination="@id/SignupFragment" />
+        <action
+            android:id="@+id/action_Login_to_Home"
+            app:destination="@id/HomeFragment" />
     </fragment>
 
     <fragment
@@ -21,7 +24,14 @@
 
         <action
             android:id="@+id/action_Signup_to_Login"
-            app:destination="@id/LoginFragment" />
+            app:destination="@id/LoginFragment"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.fitflora_proto_one.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
     </fragment>
 
 </navigation>

@@ -74,9 +74,6 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_button"
         android:text="Login"
-        android:textColorHighlight="@android:color/transparent"
-        android:textColorLink="@android:color/transparent"
-        android:textCursorDrawable="@android:color/transparent"
         />
 
 </RelativeLayout>
