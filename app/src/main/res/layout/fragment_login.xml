@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7F7E8">
+    android:background="#E7F7E8"
+    tools:context=".ui.login.LoginFragment">
 
     <ImageView
         android:id="@+id/login_top_image"
@@ -56,9 +58,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:text="No Account? Sign Up"
+        android:text="Need an Account? Sign Up"
         android:textColor="#526C59"
         android:textSize="14sp"
         android:textStyle="italic" />
@@ -69,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signup_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/rounded_button"
         android:text="Login"
         android:textColorHighlight="@android:color/transparent"
