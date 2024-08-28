@@ -215,25 +215,17 @@
         android:backgroundTint="#FFFFF9"
         />
 </LinearLayout>
+    <ImageView
+        android:id="@+id/separatorBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/barseparator"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="16dp"
+        android:layout_below="@id/treeslistbuttons"/>
 
-    <EditText
-    android:id="@+id/search_bar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/treeslistbuttons"
-    android:layout_marginTop="16dp"
-    android:hint="Search"
-    android:background="@drawable/rounded_edittext"
-    android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
-        android:inputType="text"
-        android:layout_marginHorizontal="16dp"/>
 
-<androidx.recyclerview.widget.RecyclerView
-android:id="@+id/recyclerViewTrees"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_below="@id/search_bar"
-android:layout_marginTop="16dp"
-    android:layout_marginHorizontal="16dp"/>
+
+
     </RelativeLayout>

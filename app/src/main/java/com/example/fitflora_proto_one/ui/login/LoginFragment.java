@@ -28,6 +28,11 @@ import android.widget.Toast;
 
 import com.example.fitflora_proto_one.databinding.FragmentLoginBinding;
 import com.example.fitflora_proto_one.R;
+import com.example.fitflora_proto_one.ui.signup.SignupViewModel;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     private LoginViewModel mViewModel;
@@ -39,6 +44,7 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -94,7 +100,7 @@ public class LoginFragment extends Fragment {
                 mViewModel.login(email, password);
             }
         });
-
+        observeViewModel(root);
         return root;
     }
 

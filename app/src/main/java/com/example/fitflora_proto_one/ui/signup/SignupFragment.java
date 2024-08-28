@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fitflora_proto_one.R;
 import com.example.fitflora_proto_one.databinding.FragmentSignupBinding;
@@ -109,13 +110,17 @@ public class SignupFragment extends Fragment {
             String cfmpassword = cfmpasswordEditText.getText().toString().trim();
 
             if (validateInput(email, password,cfmpassword)) {
-                // after validating we signup the guy
                 mViewModel.signUpUser(email,password); // this will then set the issuccessful to be true or false.
             }
+        });
+
+        mViewModel.getloading().observe(getViewLifecycleOwner(), isLoading -> {
+            root.findViewById(R.id.progress_bar).setVisibility(isLoading ? View.VISIBLE : View.GONE);
         });
 
 
 
         return root;
     }
+
 }

@@ -24,7 +24,6 @@ public class User {
 
     }
 
-    // Getters and Setters
 
     public String getLocation(){
         return currentLocation;

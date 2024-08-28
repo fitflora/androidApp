@@ -2,8 +2,28 @@ plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
     id("com.google.dagger.hilt.android")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
 
 }
+
+secrets {
+    // To add your Maps API key to this project:
+    // 1. If the secrets.properties file does not exist, create it in the same folder as the local.properties file.
+    // 2. Add this line, where YOUR_API_KEY is your API key:
+    //        MAPS_API_KEY=YOUR_API_KEY
+    propertiesFileName = "secrets.properties"
+
+    // A properties file containing default secret values. This file can be
+    // checked in version control.
+    defaultPropertiesFileName = "local.defaults.properties"
+
+    // Configure which keys should be ignored by the plugin by providing regular expressions.
+    // "sdk.dir" is ignored by default.
+    ignoreList.add("keyToIgnore") // Ignore the key "keyToIgnore"
+    ignoreList.add("sdk.*")       // Ignore all keys matching the regexp "sdk.*"
+}
+
 
 android {
     namespace = "com.example.fitflora_proto_one"
@@ -66,4 +86,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44")
     annotationProcessor("com.google.dagger:dagger-compiler:2.51")
     annotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+
+    // GOOGLE MAP
+    implementation("com.google.android.gms:play-services-maps:19.0.0")
+
 }

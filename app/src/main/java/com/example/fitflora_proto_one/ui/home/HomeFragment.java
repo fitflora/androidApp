@@ -50,10 +50,6 @@ public class HomeFragment extends Fragment {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.profilepic);
         profile.setImageBitmap(circularbitmap.getcircularbitmap(bitmap));
 
-        adapter = new HomeAdapter(new ArrayList<>(), R.layout.tree_item );
-        binding.recyclerViewTrees.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.recyclerViewTrees.setAdapter(adapter);
-
 
         return root;
     }

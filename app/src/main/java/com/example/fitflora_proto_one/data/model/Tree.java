@@ -7,16 +7,13 @@ public class Tree {
     private String id;
     private String name;
     private String location;
-    private int crowd;
     private float distance;
     private List<Machine> machines;
 
-    // Constructor
-    public Tree(String id, String name, String location, int crowd, float distance, List<Machine> machines) {
+    public Tree(String id, String name, String location, float distance, List<Machine> machines) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.crowd = crowd;
         this.distance = distance;
         this.machines = machines;
     }
@@ -47,13 +44,6 @@ public class Tree {
         this.location = location;
     }
 
-    public int getCrowd() {
-        return crowd;
-    }
-
-    public void setCrowd(int crowd) {
-        this.crowd = crowd;
-    }
 
     public float getDistance() {
         return distance;

@@ -14,7 +14,6 @@ import javax.inject.Inject;
 @HiltViewModel
 public class LoginViewModel extends ViewModel {
         private final FirebaseAuth firebaseAuth;
-
         private final MutableLiveData<FirebaseUser> userLiveData = new MutableLiveData<>();
 
         private final MutableLiveData<String> errorLiveData = new MutableLiveData<>();
@@ -22,6 +21,7 @@ public class LoginViewModel extends ViewModel {
 
         @Inject
         public LoginViewModel(FirebaseAuth firebaseAuth) {
+
             this.firebaseAuth = firebaseAuth;
         }
 
