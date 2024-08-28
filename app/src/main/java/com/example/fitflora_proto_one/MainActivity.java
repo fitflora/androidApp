@@ -19,6 +19,10 @@ import com.example.fitflora_proto_one.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;

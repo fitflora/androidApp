@@ -10,16 +10,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,9 +82,39 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-        // TODO: Use the ViewModel
+
+
+        root.findViewById(R.id.login_button).setOnClickListener(v -> {
+            String email = ((EditText) root.findViewById(R.id.username)).getText().toString();
+            String password = ((EditText) root.findViewById(R.id.password)).getText().toString();
+
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                Toast.makeText(getContext(), "Please enter email and password", Toast.LENGTH_SHORT).show();
+            } else {
+                mViewModel.login(email, password);
+            }
+        });
 
         return root;
+    }
+
+    private void observeViewModel(View view) {
+        mViewModel.getUserLiveData().observe(getViewLifecycleOwner(), firebaseUser -> {
+            if (firebaseUser != null) {
+                // Navigate to another fragment or activity on successful login
+                NavHostFragment.findNavController(this).navigate(R.id.action_Login_to_Home);
+            }
+        });
+
+        mViewModel.getError().observe(getViewLifecycleOwner(), error -> {
+            if (error != null) {
+                Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mViewModel.getloading().observe(getViewLifecycleOwner(), isLoading -> {
+            // Show or hide a progress bar
+            view.findViewById(R.id.progress_bar).setVisibility(isLoading ? View.VISIBLE : View.GONE);
+        });
     }
 }

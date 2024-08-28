@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -41,6 +43,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.google.firebase:firebase-firestore")
 
 
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
@@ -51,7 +54,16 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:2.7.7")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.0-alpha03")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // DI Dependencies here
+    implementation("com.google.dagger:dagger:2.51")
+    implementation("com.google.dagger:hilt-android:2.44")
+    annotationProcessor("com.google.dagger:dagger-compiler:2.51")
+    annotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
 }

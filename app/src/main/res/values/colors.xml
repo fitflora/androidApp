@@ -4,4 +4,6 @@
     <color name="colorSecondary">#191919</color>
     <color name="colorAccent">#598C78</color>
     <color name="colorTextColor">#414141</color>
+    <color name="black">#2D2C2C</color>
+
 </resources>

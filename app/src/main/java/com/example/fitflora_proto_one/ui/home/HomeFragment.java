@@ -20,6 +20,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 import com.example.fitflora_proto_one.R;
@@ -27,13 +28,12 @@ import com.example.fitflora_proto_one.databinding.FragmentHomeBinding;
 
 import com.example.fitflora_proto_one.utility.circularbitmap;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
+    private HomeAdapter adapter;
     private FragmentHomeBinding binding;
     private HomeViewModel mViewModel;
-    private TextView SignUpText ;
-
-    private Button LoginButton;
-
     private ImageView profile;
 
     @Nullable
@@ -49,6 +49,10 @@ public class HomeFragment extends Fragment {
         // THIS IS JUST TO MAKE profile picture CIRCULAR!
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.profilepic);
         profile.setImageBitmap(circularbitmap.getcircularbitmap(bitmap));
+
+        adapter = new HomeAdapter(new ArrayList<>(), R.layout.tree_item );
+        binding.recyclerViewTrees.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerViewTrees.setAdapter(adapter);
 
 
         return root;
