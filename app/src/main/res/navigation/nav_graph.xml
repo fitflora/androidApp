@@ -35,6 +35,42 @@
         android:id="@+id/HomeFragment"
         android:name="com.example.fitflora_proto_one.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_Home_to_Map"
+            app:destination="@id/MapsFragment"/>
+        <action
+            android:id="@+id/action_Home_to_Camera"
+            app:destination="@id/CameraFragment"/>
     </fragment>
+
+
+    <fragment
+        android:id="@+id/MapsFragment"
+        android:name="com.example.fitflora_proto_one.ui.map.MapsFragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/CameraFragment"
+        android:name="com.example.fitflora_proto_one.ui.camera.CameraFragment"
+        tools:layout="@layout/fragment_camera">
+
+        <action
+            android:id="@+id/action_Camera_to_Plant"
+            app:destination="@id/PlantFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlantsFragment"
+        android:name="com.example.fitflora_proto_one.ui.plants.PlantsFragment"
+        tools:layout="@layout/fragment_plants">
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlantFragment"
+        android:name="com.example.fitflora_proto_one.ui.plant.PlantFragment"
+        tools:layout="@layout/fragment_plant">
+    </fragment>
+
 
 </navigation>

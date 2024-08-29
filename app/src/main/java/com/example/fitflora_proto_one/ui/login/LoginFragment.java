@@ -18,6 +18,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +27,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitflora_proto_one.MainActivity;
 import com.example.fitflora_proto_one.databinding.FragmentLoginBinding;
 import com.example.fitflora_proto_one.R;
 import com.example.fitflora_proto_one.ui.signup.SignupViewModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -40,16 +43,23 @@ public class LoginFragment extends Fragment {
 
     private Button LoginButton;
 
+    private BottomNavigationView bottomNavigationView;
+
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
+
+
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         SignUpText = root.findViewById(R.id.signup_text);
         LoginButton = root.findViewById(R.id.login_button);
+        ((MainActivity) getActivity()).hideBottomNavigationView();
 
         String text = "Need an Account? Sign Up";
         int startIndex = text.indexOf("Sign Up");
@@ -119,8 +129,12 @@ public class LoginFragment extends Fragment {
         });
 
         mViewModel.getloading().observe(getViewLifecycleOwner(), isLoading -> {
-            // Show or hide a progress bar
             view.findViewById(R.id.progress_bar).setVisibility(isLoading ? View.VISIBLE : View.GONE);
         });
+    }
+
+    public void onDestroyView() {
+        super.onDestroyView();
+        ((MainActivity) getActivity()).showBottomNavigationView();
     }
 }

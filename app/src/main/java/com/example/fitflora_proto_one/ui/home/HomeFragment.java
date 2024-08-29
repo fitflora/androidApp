@@ -20,9 +20,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 
+import com.example.fitflora_proto_one.MainActivity;
 import com.example.fitflora_proto_one.R;
 import com.example.fitflora_proto_one.databinding.FragmentHomeBinding;
 
@@ -45,6 +48,7 @@ public class HomeFragment extends Fragment {
     private ImageView profile;
     private MapView mapView;
 
+    private ImageView expandbutton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -53,6 +57,8 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         profile = root.findViewById(R.id.profileImageView);
+        expandbutton = root.findViewById(R.id.expand_button);
+
 
 
         mapView = root.findViewById(R.id.unexpanded_map);
@@ -74,6 +80,16 @@ public class HomeFragment extends Fragment {
         // THIS IS JUST TO MAKE profile picture CIRCULAR!
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.profilepic);
         profile.setImageBitmap(circularbitmap.getcircularbitmap(bitmap));
+
+        // domain expansion on google maps
+        expandbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_Home_to_Map);
+            }
+        });
+
 
 
         return root;

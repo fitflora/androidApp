@@ -31,7 +31,7 @@
                 android:layout_alignParentTop="true"
                 android:text="東壩郊野公園 (Dongba Country Park)"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black"
+                android:textColor="#000000"
                 />
 
             <TextView

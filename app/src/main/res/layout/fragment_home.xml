@@ -203,7 +203,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@id/separatorBar"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="10dp"
     android:orientation="horizontal">
 
     <Button
@@ -227,15 +227,35 @@
         />
 </LinearLayout>
 
-
+    <RelativeLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/treeslistbuttons"
+        >
     <com.google.android.gms.maps.MapView
         android:id="@+id/unexpanded_map"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/treeslistbuttons"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp" />
+
+        <ImageButton
+            android:id="@+id/expand_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/map_expand"
+            android:contentDescription="Expand Map"
+            android:src="@drawable/expand_map" />
+
+    </RelativeLayout>
 
 
 

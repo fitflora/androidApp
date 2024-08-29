@@ -18,9 +18,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fitflora_proto_one.MainActivity;
 import com.example.fitflora_proto_one.R;
 import com.example.fitflora_proto_one.databinding.FragmentSignupBinding;
 import com.example.fitflora_proto_one.ui.home.HomeViewModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -32,6 +34,8 @@ public class SignupFragment extends Fragment {
     private FragmentSignupBinding binding;
     private SignupViewModel mViewModel;
     private ImageButton goback;
+
+    private BottomNavigationView bottomNavigationView;
 
     public static SignupFragment newInstance() {
         return new SignupFragment();
@@ -72,6 +76,7 @@ public class SignupFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(SignupViewModel.class);
         binding = FragmentSignupBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        ((MainActivity) getActivity()).hideBottomNavigationView();
         goback = root.findViewById(R.id.backButton);
         Log.d("PLEASE WORK", "ImageButton reference: " + goback);
 
@@ -88,6 +93,7 @@ public class SignupFragment extends Fragment {
         passwordEditText = root.findViewById(R.id.password);
         cfmpasswordEditText = root.findViewById(R.id.confirm_password);
         signUpButton = root.findViewById(R.id.signup_button);
+
 
 
 
@@ -117,7 +123,6 @@ public class SignupFragment extends Fragment {
         mViewModel.getloading().observe(getViewLifecycleOwner(), isLoading -> {
             root.findViewById(R.id.progress_bar).setVisibility(isLoading ? View.VISIBLE : View.GONE);
         });
-
 
 
         return root;

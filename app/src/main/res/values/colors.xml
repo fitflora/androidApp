@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F3FFF4</color>
-    <color name="colorSecondary">#191919</color>
-    <color name="colorAccent">#598C78</color>
-    <color name="colorTextColor">#414141</color>
-    <color name="black">#2D2C2C</color>
+    <!-- Define the primary colors -->
+    <color name="colorPrimary">#328363</color> <!-- The dark green color -->
+    <color name="colorPrimaryVariant">#1E5A42</color> <!-- A darker variant of the primary color -->
+    <color name="colorSecondary">#FFFFFF</color> <!-- The white color -->
+    <color name="colorSecondaryVariant">#FFFFF9</color> <!-- A slightly off-white color -->
+    <color name="colorAccent">#DA5340</color> <!-- The red accent color used in the progress bar -->
+    <color name="backgroundColor">#F5F5F5</color> <!-- Light gray for backgrounds -->
+    <color name="textColorPrimary">#000000</color> <!-- Black text color -->
+    <color name="textColorSecondary">#4A4A4A</color> <!-- Dark gray text color for secondary text -->
 
+    <!-- Additional colors for other elements -->
+    <color name="progressBackgroundColor">#E0E0E0</color> <!-- Background color for progress bars -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- White text on buttons -->
+    <color name="greenButtonColor">#328363</color> <!-- Green button background -->
+    <color name="headerTextColor">#FFFFFF</color> <!-- White color for header text -->
 </resources>

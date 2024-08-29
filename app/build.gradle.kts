@@ -90,4 +90,10 @@ dependencies {
     // GOOGLE MAP
     implementation("com.google.android.gms:play-services-maps:19.0.0")
 
+
+    // QR CODE
+
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation("com.google.zxing:core:3.3.3")
+
 }

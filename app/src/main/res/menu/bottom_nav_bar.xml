@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/HomeFragment"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:id="@+id/PlantsFragment"
+        android:title="Plants"
+        android:icon="@drawable/baseline_energy_savings_leaf_24"/>
+    <item android:id="@+id/CameraFragment"
+        android:title="Camera"
+        android:icon="@drawable/baseline_camera_alt_24"
+        />
+    <item android:id="@+id/MapsFragment"
+        android:title="Map"
+        android:icon="@drawable/baseline_assistant_navigation_24"/>
+    <item android:id="@+id/mSetting"
+        android:title="Exit"
+        android:icon="@drawable/baseline_exit_to_app_24"/>
+</menu>
