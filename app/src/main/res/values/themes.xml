@@ -8,6 +8,7 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">#6CAA78</item>
 
         <!-- Background color -->
         <item name="android:windowBackground">@color/backgroundColor</item>

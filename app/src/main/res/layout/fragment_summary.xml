@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#2D2D2D">
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/profilepic"
+        android:layout_marginBottom="20dp"
+        />
+
+    <TextView
+        android:id="@+id/summaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timer ran for: --:--"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#F3FFF4"/>
+
+    <TextView
+        android:id="@+id/plantGrowthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contributed Plant Growth: 20%"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#F3FFF4"/>
+
+    <TextView
+        android:id="@+id/selfGrowthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Self Growth: 40/100 of Daily Exercise"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#F3FFF4"/>
+
+    <TextView
+        android:id="@+id/environmentalConservationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Environmental Conservation: 2g CO2 reduced"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#F3FFF4"/>
+
+</LinearLayout>

@@ -5,15 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-        <fragment
-            android:id="@+id/timerFragment"
-            android:name="com.example.fitflora_proto_one.ui.timerwidget.TimerFragment"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_gravity="top|end"
-            android:padding="16dp" />
 
-        <!-- Main content will expand to fill the space between the top and the BottomNavigationView -->
+        <!-- Main Content -->
         <include
             android:id="@+id/main_content"
             layout="@layout/content_main"
@@ -32,5 +25,18 @@
             app:itemTextAppearanceInactive="@style/TextAppearance.App.BottomNavigationView.Inactive"
             app:menu="@menu/bottom_nav_bar"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+                <FrameLayout
+                    android:id="@+id/timer_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+        </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

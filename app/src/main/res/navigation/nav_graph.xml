@@ -48,6 +48,9 @@
         android:id="@+id/MapsFragment"
         android:name="com.example.fitflora_proto_one.ui.map.MapsFragment"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_Maps_to_Home"
+            app:destination="@id/HomeFragment"/>
     </fragment>
 
     <fragment
@@ -58,19 +61,53 @@
         <action
             android:id="@+id/action_Camera_to_Plant"
             app:destination="@id/PlantFragment"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/PlantsFragment"
         android:name="com.example.fitflora_proto_one.ui.plants.PlantsFragment"
         tools:layout="@layout/fragment_plants">
+
+
+
     </fragment>
 
     <fragment
         android:id="@+id/PlantFragment"
         android:name="com.example.fitflora_proto_one.ui.plant.PlantFragment"
         tools:layout="@layout/fragment_plant">
+
+        <action
+            android:id="@+id/action_Plant_to_Camera"
+            app:destination="@id/CameraFragment"/>
+        <action
+            android:id="@+id/action_Plant_to_Home"
+            app:destination="@id/HomeFragment"/>
+        <action
+            android:id="@+id/action_Plant_to_Map"
+            app:destination="@id/MapsFragment"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/SummaryFragment"
+        android:name="com.example.fitflora_proto_one.ui.timer_end.SummaryFragment"
+        tools:layout="@layout/fragment_summary">
+
+        <action
+            android:id="@+id/action_Summary_to_Camera"
+            app:destination="@id/CameraFragment"/>
+        <action
+            android:id="@+id/action_Summary_to_Map"
+            app:destination="@id/MapsFragment"/>
+        <action
+            android:id="@+id/action_Summary_to_Home"
+            app:destination="@id/HomeFragment"/>
+    </fragment>
+
+    <action
+        android:id="@+id/action_Plant_to_Summary"
+        app:destination="@id/SummaryFragment"/>
 
 
 </navigation>

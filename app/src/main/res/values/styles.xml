@@ -2,9 +2,9 @@
 <resources>
     <style name="TextAppearance.App.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textStyle">bold</item>
-    </style>
+        <item name="android:statusBarColor">#6CAA78</item>    </style>
 
     <style name="TextAppearance.App.BottomNavigationView.Inactive" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textStyle">normal</item>
-    </style>
+        <item name="android:statusBarColor">#6CAA78</item>    </style>
 </resources>

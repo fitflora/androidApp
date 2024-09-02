@@ -1,14 +1,237 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.plant.PlantFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!-- Image of the Tomato -->
+        <ImageView
+            android:id="@+id/tomatoImage"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tomato_pic" />
+
+        <!-- Plant Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/plantTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Chinese Tomatoes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <!-- Plant Description -->
+            <TextView
+                android:id="@+id/plantDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="The Chinese Tomato, known for its sweet and juicy flavour, originated from southern China, such as Guangdong and Fujian, where it is warm, subtropical climate providing ideal growing conditions."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <!-- Characteristics -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/comment_section"
+                android:padding="16dp"
+                android:layout_marginTop="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Characteristics"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Sunlight: 6-8 hours" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lifecycle: 4-8 months" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water: High" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Origin: Guangdong, Fujian" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Average Height: 0.9m - 1.8m" />
+
+
+                </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nutrition Facts"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:layout_marginTop="8dp">
+
+                <TableRow>
+                    <TextView
+                        android:text="Serving"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold"
+                        android:background="@drawable/table_cell_border"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="100 g"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@drawable/table_cell_border"
+                    android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Calories"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textStyle="bold"
+                        android:background="@drawable/table_cell_border"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="18 kcal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:background="@drawable/table_cell_border"
+                        android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Protein"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold"
+                        android:background="@drawable/table_cell_border"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="0.9 g (23% of daily)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:background="@drawable/table_cell_border"
+                        android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Vitamin A"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:background="@drawable/table_cell_border"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:text="883 IU (16% of daily)"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Vitamin C"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:text="7.9 µg (10% of daily)"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Potassium"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:text="237 mg (7% of daily)"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="Magnesium"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:text="1 mg (3% of daily)"
+                        android:background="@drawable/table_cell_border"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- Comments Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/comment_section"
+                android:padding="16dp"
+                android:layout_marginTop="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Comments Section"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="John:  The Chinese Tomatoes are so delicious! We tried them last year, and they were perfect for salads." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Emily:  I grew these tomatoes last season. They are super juicy and easy to care for!" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Michael:  These tomatoes are a must-try! I use them in almost every dish." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Sophia: My family loves these tomatoes. We have been growing them for years!" />
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
