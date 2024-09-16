@@ -19,11 +19,9 @@ public class PlantFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plant, container, false);
 
-        // Set up your views here
         ImageView tomatoImage = view.findViewById(R.id.tomatoImage);
         TextView plantTitle = view.findViewById(R.id.plantTitle);
         TextView plantDescription = view.findViewById(R.id.plantDescription);
-        // Set the values or add more code logic
 
         return view;
     }
