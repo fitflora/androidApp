@@ -61,17 +61,10 @@ public class CameraFragment extends Fragment {
     }
 
     private void handleQRCode(String qrText, View view) {
-        // Show a toast message with the scanned QR code
         Toast.makeText(getActivity(), "QR Code Detected: " + qrText, Toast.LENGTH_LONG).show();
-
-        // Enable and start the TimerFragment
         enableAndStartTimerFragment();
-
-        // Navigate to PlantFragment and pass the QR code data
         Bundle bundle = new Bundle();
         bundle.putString("qrData", qrText);
-
-        // Navigate using the correct NavController
         Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.action_Camera_to_Plant, bundle);
     }
 
@@ -79,19 +72,16 @@ public class CameraFragment extends Fragment {
 
 
     private void enableAndStartTimerFragment() {
-        // Make the timer_frame visible
         View timerFrame = requireActivity().findViewById(R.id.timer_frame);
         if (timerFrame != null) {
             timerFrame.setVisibility(View.VISIBLE);
         }
 
-        // Replace the fragment inside timer_frame
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         TimerFragment timerFragment = new TimerFragment();
 
-        // Add or replace the TimerFragment inside the timer_frame
         fragmentTransaction.replace(R.id.timer_frame, timerFragment);
         fragmentTransaction.commit();
     }
