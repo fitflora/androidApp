@@ -54,15 +54,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Create the notification channel (required for Android 8.0 and above)
         createNotificationChannel(this);
-
-        // Show the notification
         showNotification(this);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        // Your navigation setup code
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupWithNavController(navView, navController);
 
@@ -75,11 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            // Get the ID of the current destination
             int id = destination.getId();
-
-            // Check if the current fragment is the one where you want to hide the BottomNavigationView
-            if (id == R.id.LoginFragment || id == R.id.SignupFragment) {  // Replace with your fragment's ID
+            if (id == R.id.LoginFragment || id == R.id.SignupFragment) {
                 hideBottomNavigationView();
             } else {
                 showBottomNavigationView();
@@ -114,8 +107,6 @@ public class MainActivity extends AppCompatActivity {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("YOUR_CHANNEL_ID", name, importance);
             channel.setDescription(description);
-
-            // Register the channel with the system
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
@@ -128,12 +119,11 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "YOUR_CHANNEL_ID")
-                .setSmallIcon(R.drawable.transparent_logo) // Your app's icon
+                .setSmallIcon(R.drawable.transparent_logo) 
                 .setContentTitle("Tree Requires Watering")
                 .setContentText("Chinese Tomatoes at Haidian needs you!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent);
-        // Show the notification
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
