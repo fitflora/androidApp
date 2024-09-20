@@ -32,5 +32,8 @@ https://github.com/user-attachments/assets/d21e67de-5680-4380-a505-62c6d46ab321
 - **Expanded Community Features**: Group functionality for collective seedbed care and expanded educational resources to foster deeper engagement.
 - **Enhanced Rewards System**: Users will receive additional rewards for consistent participation and collaborative efforts in urban farming.
 
+## Contributed By
+Muhammad Asyraf Bin Omar - muhdasyrafbinomar@gmail.com
+
 #### Note
 With 2 weeks deadline, please note that some components are placeholders and hard coded for demonstration purposes.
