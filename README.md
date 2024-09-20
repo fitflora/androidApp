@@ -21,6 +21,12 @@ FitFlora is an innovative mobile application designed to integrate fitness, hort
 3. **Earn Points**: After completing your session, earn points based on your contributions to plant and personal health.
 4. **Redeem Rewards**: Use your points to claim fresh produce from vending machines located near your home.
 
+
+
+https://github.com/user-attachments/assets/d21e67de-5680-4380-a505-62c6d46ab321
+
+
+
 ## Future Enhancements
 
 - **Expanded Community Features**: Group functionality for collective seedbed care and expanded educational resources to foster deeper engagement.
